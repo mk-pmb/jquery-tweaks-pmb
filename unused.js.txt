@@ -1,0 +1,9 @@
+﻿
+  function failIf(rly, why) { if (rly) { throw new Error(why || rly); } }
+  function ifFun(x, d) { return ((typeof x) === 'function' ? x : d); }
+
+  EX.mthdProxy = function (m) {
+    return function () { return EX[m].apply(this, arguments); };
+  };
+
+

@@ -1,0 +1,28 @@
+{ "name": "jquery-tweaks-pmb",
+  "version": "0.1.0",
+  "description": "Some tweaks for jQuery.",
+  "keywords": [ "jquery" ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/jquery-tweaks-pmb/#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/jquery-tweaks-pmb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/jquery-tweaks-pmb/issues"
+  },
+  "contributors": [],
+
+  "private": false, "license": "ISC",
+
+  "main": "t.js",
+  "scripts": { "test": "nodejs test/all.js" },
+  "directories": { "test": "test" },
+
+  "dependencies": { "jquery": "^3.0.0" },
+  "devDependencies": {},
+
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
