@@ -8,15 +8,17 @@
 
   function noop() { return; }
 
-  EX.dataType2mime = {
-    text: 'text/plain',
-    json: 'text/json',
-  };
+  function defuseRespMimeType(t) {
+    if (!t) { return; }
+    t = t.split(/\s/)[0];
+    return 'text/' + (((t.slice(-2) === 'ml') && t)
+      || 'plain') + '; charset=UTF-8';
+  }
 
   EX.tweakAjaxOpts = function (opt, origOpt, jqXHR) {
     noop(origOpt);
     var mimeOvr = opt.overrideResponseMimeType;
-    if (mimeOvr === undefined) { mimeOvr = EX.dataType2mime[opt.dataType]; }
+    if (mimeOvr === undefined) { mimeOvr = defuseRespMimeType(opt.dataType); }
     if (mimeOvr !== undefined) { jqXHR.overrideMimeType(mimeOvr); }
   };
   jq.ajaxPrefilter(EX.tweakAjaxOpts);
